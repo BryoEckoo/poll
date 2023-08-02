@@ -236,13 +236,7 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'URL': 'postgresql://postgres:4gr2rL2A0iaP1CbMwGnl@containers-us-west-173.railway.app:6404/railway',
-        'NAME': 'railway',
-        'USER': 'PGUSER',
-        'PASSWORD': '4gr2rL2A0iaP1CbMwGnl',
-        'HOST': 'containers-us-west-173.railway.app',
-        'PORT': 6404,
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
