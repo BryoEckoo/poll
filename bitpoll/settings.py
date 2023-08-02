@@ -40,7 +40,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '_static')
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
     'ALLOW_CUSTOM_SLUGS',
@@ -233,12 +233,12 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+  #  'default': {
+ #       'ENGINE': 'django.db.backends.sqlite3',
+ #       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #   }
+#}
 
 
 CACHES = {
@@ -398,3 +398,11 @@ from .settings_local import *
 
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
+
+# At the end of file. add these lines
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Also Make aure To set allowed_hosts to '*'
