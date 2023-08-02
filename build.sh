@@ -11,4 +11,4 @@ pip install -r requirements.txt
 python manage.py migrate
 
 # Start the Django development server (you may need to adjust the host and port as per Vercel's requirements)
-python manage.py runserver 0.0.0.0:8000
+
