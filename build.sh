@@ -2,7 +2,7 @@
 
 # Create a virtual environment and activate it
 python -m venv venv
-venv/Script/activate.bat
+source venv/bin/activate
 
 # Install the requirements
 pip install -r requirements.txt
