@@ -40,7 +40,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '_static')
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
     'ALLOW_CUSTOM_SLUGS',
@@ -235,12 +235,8 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',                # Name of your database on Railway
-        'USER': 'postgres',              # Database username
-        'PASSWORD': '4gr2rL2A0iaP1CbMwGnl',  # Database password
-        'HOST': 'containers-us-west-173.railway.app',  # Database host
-        'PORT': '6404',                  # Database port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -402,11 +398,3 @@ from .settings_local import *
 
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
-
-# At the end of file. add these lines
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-MEDIA_URLS ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Also Make aure To set allowed_hosts to '*'
