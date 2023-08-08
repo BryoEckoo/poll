@@ -3,6 +3,7 @@
 {% load csp %}
 {% load settings_value %}
 {% load tz %}
+{% load static %}
 
 {%  value_from_settings SITE_NAME as site_name %}
 {%  value_from_settings DEBUG as debug %}
@@ -24,6 +25,11 @@
     {% javascript 'base' %}
     {% block css %}{%  endblock %}
     {% block headJS %}{% endblock %}
+    <!-- templates/your_template.html -->
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'scss/main.scss' %}">
+
 </head>
 <body>
 <div id="wrapper">
