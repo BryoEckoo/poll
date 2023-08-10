@@ -34,12 +34,14 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(ROOT_DIR, '_static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,7 +66,7 @@ TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = '/login/'
 
-SITE_NAME = 'poll'
+SITE_NAME = 'Bitpoll'
 BASE_URL = 'https://bitpoll.mafiasi.de'
 
 # Application definition
@@ -105,11 +107,15 @@ MIDDLEWARE = [
     'pipeline.middleware.MinifyHTMLMiddleware',
 ]
 
+
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 ]
+
+
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
