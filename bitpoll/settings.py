@@ -113,6 +113,10 @@ STATICFILES_FINDERS = [
     'pipeline.finders.PipelineFinder',
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
 PIPELINE = {
