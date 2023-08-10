@@ -115,11 +115,7 @@ STATICFILES_FINDERS = [
     'pipeline.finders.PipelineFinder',
 ]
 
-CUSTOM_STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [   # Default static directory for the project
-    CUSTOM_STATIC_PATH,                  # Custom static directory
-]
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
