@@ -117,8 +117,7 @@ STATICFILES_FINDERS = [
 
 CUSTOM_STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),    # Default static directory for the project
+STATICFILES_DIRS = [   # Default static directory for the project
     CUSTOM_STATIC_PATH,                  # Custom static directory
 ]
 
