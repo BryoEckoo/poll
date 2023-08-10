@@ -3,7 +3,6 @@
 {% load csp %}
 {% load settings_value %}
 {% load tz %}
-{% load static %}
 
 {%  value_from_settings SITE_NAME as site_name %}
 {%  value_from_settings DEBUG as debug %}
@@ -19,11 +18,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - {{ site_name }}</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    {% javascript 'base' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base_scren.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/print.css' %}">
     {% block css %}{%  endblock %}
     {% block headJS %}{% endblock %}
-    
 </head>
 <body>
 <div id="wrapper">
