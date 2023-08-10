@@ -34,18 +34,13 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "static"),
-
-]
-
-STATIC_ROOT = os.path.join(ROOT_DIR, 'stat')
+STATIC_ROOT = os.path.join(ROOT_DIR, '_static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
     'ALLOW_CUSTOM_SLUGS',
@@ -240,12 +235,8 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'verceldb', 
-        'USER': 'default',
-        'PASSWORD': 'nOwyK7dY8xEV',
-        'HOST': 'ep-dark-frost-29085156-pooler.us-east-1.postgres.vercel-storage.com', 
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -407,5 +398,3 @@ from .settings_local import *
 
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
-
-

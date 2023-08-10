@@ -21,9 +21,6 @@ from django.shortcuts import redirect, render
 from django.urls import path
 import django.conf.urls.i18n
 
-from django.templatetags.static import static
-
-
 from bitpoll import settings
 
 urlpatterns = [
@@ -39,9 +36,6 @@ urlpatterns = [
     path(r'admin/', admin.site.urls),
 
 ]
-
-
-
 
 if settings.CALENDAR_ENABLED:
     urlpatterns += [
