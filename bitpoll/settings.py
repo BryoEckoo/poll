@@ -107,13 +107,20 @@ MIDDLEWARE = [
     'pipeline.middleware.MinifyHTMLMiddleware',
 ]
 
+
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 ]
 
+CUSTOM_STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),    # Default static directory for the project
+    CUSTOM_STATIC_PATH,                  # Custom static directory
+]
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
