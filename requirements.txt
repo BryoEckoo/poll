@@ -58,6 +58,9 @@ markdown==3.4.1
 pycparser==2.21
     # via cffi
 python-dateutil==2.8.2
+
+psycopg2-binary
+
     # via
     #   icalendar
     #   recurring-ical-events
