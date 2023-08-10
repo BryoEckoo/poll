@@ -40,7 +40,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '_static')
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
     'ALLOW_CUSTOM_SLUGS',
@@ -63,7 +63,7 @@ TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = '/login/'
 
-SITE_NAME = 'Bitpoll'
+SITE_NAME = 'poll'
 BASE_URL = 'https://bitpoll.mafiasi.de'
 
 # Application definition
@@ -235,8 +235,12 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'verceldb', 
+        'USER': 'default',
+        'PASSWORD': '1tPYwrClA8Sg',
+        'HOST': 'ep-jolly-heart-14214350-pooler.us-east-1.postgres.vercel-storage.com', 
+        'PORT': '5432',
     }
 }
 
