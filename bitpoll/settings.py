@@ -89,7 +89,7 @@ INSTALLED_APPS = [
     'friendlytagloader',
     'encrypted_model_fields',
     'django_token_bucket',
-    'psycopg2-binary',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
