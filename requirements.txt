@@ -54,6 +54,8 @@ libsasscompiler==0.1.9
 lxml==4.9.2
     # via caldav
 markdown==3.4.1
+
+psycopg2-binary
     # via django-markdownify
 pycparser==2.21
     # via cffi
