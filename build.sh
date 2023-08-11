@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Activate the virtual environment (if needed)
-source polll/Scripts/activate  # Uncomment this line if using a virtual environment
+python3.9 source polll/Scripts/activate  # Uncomment this line if using a virtual environment
 
 # Install requirements (if not already installed)
 python3.9 -m pip install -r requirements.txt
