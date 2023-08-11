@@ -1,17 +1,4 @@
-#!/bin/bash
-
-# Create and activate the virtual environment
-python3.9 -m venv myenv
-source myenv/bin/activate
-
-# Install project dependencies
-pip install -r requirements.txt
-
-# Migrate the database
-python manage.py migrate
-
-# Collect static files
-python manage.py collectstatic --noinput --clear
-
-# Deactivate the virtual environment
-deactivate
+ python3.9 -m venv virtual
+ 
+ python3.9 -m pip install -r requirements.txt
+ python3.9 manage.py collectstatic --noinput --clear
