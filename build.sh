@@ -1,15 +1,17 @@
 #!/bin/bash
 
-# Activate the virtual environment (if needed)
-python3.9 source polll/Scripts/activate  # Uncomment this line if using a virtual environment
+# Create and activate the virtual environment
+python3.9 -m venv myenv
+source myenv/bin/activate
 
-# Install requirements (if not already installed)
-python3.9 -m pip install -r requirements.txt
+# Install project dependencies
+pip install -r requirements.txt
 
-# Apply database migrations
-python3.9 manage.py migrate
+# Migrate the database
+python manage.py migrate
 
-# No need to collectstatic if static files are already collected
+# Collect static files
+python manage.py collectstatic --noinput --clear
 
-# Deactivate the virtual environment (if needed)
-# deactivate  # Uncomment this line if using a virtual environment
+# Deactivate the virtual environment
+deactivate
