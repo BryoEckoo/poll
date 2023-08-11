@@ -235,8 +235,12 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'verceldb', 
+        'USER': 'default',
+        'PASSWORD': '1tPYwrClA8Sg',
+        'HOST': 'ep-jolly-heart-14214350-pooler.us-east-1.postgres.vercel-storage.com', 
+        'PORT': '5432',
     }
 }
 
