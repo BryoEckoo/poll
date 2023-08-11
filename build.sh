@@ -11,6 +11,3 @@ python manage.py migrate
 
 # Collect static files
 python manage.py collectstatic --noinput --clear
-
-# Deactivate the virtual environment
-deactivate
