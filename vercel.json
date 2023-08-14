@@ -10,18 +10,15 @@
       "src": "build.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "stat"
+        "distDir": "static"
       }
     }
     ],
     "routes": [
-       {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
       {
         "src": "/(.*)",
         "dest": "bitpoll/wsgi.py"
       }
-    ]
+    ],
+    "outputDirectory": "static"
 }
