@@ -95,6 +95,7 @@ urllib3==1.26.13
 vobject==0.9.6.1
     # via caldav
 webencodings==0.5.1
+whitenoise==6.5.0
     # via
     #   bleach
     #   tinycss2
