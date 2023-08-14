@@ -38,6 +38,8 @@ STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_HOST = os.environ.get("DJANGO_STATIC_HOST", "")
+STATIC_URL = STATIC_HOST + "/static/"
 STATIC_URL = '/static/'
 
 ALLOWED_HOSTS = ['*']
@@ -89,6 +91,8 @@ INSTALLED_APPS = [
     'friendlytagloader',
     'encrypted_model_fields',
     'django_token_bucket',
+    "whitenoise.runserver_nostatic",
+    "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
