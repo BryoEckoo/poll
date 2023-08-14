@@ -17,7 +17,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/my_handler/$1"
+        "dest": "/static/$1"
       },
       {
         "src": "/(.*)",
