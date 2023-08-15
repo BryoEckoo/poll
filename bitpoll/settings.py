@@ -95,6 +95,7 @@ INSTALLED_APPS = [
     'django_token_bucket',
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
