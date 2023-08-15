@@ -1,5 +1,7 @@
 django<4.1
 django-widget-tweaks
+django-auth-ldap
+sentry-sdk
 django-markdownify
 pytz
 django-simple-csp
@@ -10,3 +12,6 @@ django-encrypted-model-fields
 caldav
 icalendar
 django-token-bucket>=0.2.2
+django-auth-ldap
+uwsgi
+psycopg2-binary
