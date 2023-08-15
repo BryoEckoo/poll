@@ -38,6 +38,6 @@ tzlocal==4.2
 urllib3==1.26.13
 vobject==0.9.6.1
 webencodings==0.5.1
-widget-tweaks
+widget_tweaks
 whitenoise==6.5.0
 x-wr-timezone==0.0.5
