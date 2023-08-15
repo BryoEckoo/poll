@@ -1,4 +1,4 @@
- polll\Scripts\activate.bat
+ python3.9 polll\Scripts\activate.bat
  pip install whitenoise
  pip freeze > requirements.txt
  pip install -r requirements.txt
