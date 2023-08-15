@@ -40,4 +40,4 @@ vobject==0.9.6.1
 webencodings==0.5.1
 whitenoise==6.5.0
 x-wr-timezone==0.0.5
-"widget-tweaks==1.4.8" 
+widget-tweaks==1.4.8 
