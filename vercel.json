@@ -15,14 +15,13 @@
     }
     ],
     "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
+       {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
       {
         "src": "/(.*)",
         "dest": "bitpoll/wsgi.py"
       }
-    ],
-    "outputDirectory": "static"
+    ]
 }

@@ -1,5 +1,5 @@
 __pycache__
-_static
+
 .idea
 db.sqlite3
 *.pyc
@@ -8,5 +8,5 @@ db.sqlite3
 **.swp
 .pyenv
 *.mo
-bitpoll/settings_local.py
+
 run

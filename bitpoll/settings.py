@@ -34,12 +34,13 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_HOST = os.environ.get("DJANGO_STATIC_HOST", "")
-STATIC_URL = STATIC_HOST + "/static/"
 STATIC_URL = '/static/'
 
 ALLOWED_HOSTS = ['*']
@@ -91,8 +92,6 @@ INSTALLED_APPS = [
     'friendlytagloader',
     'encrypted_model_fields',
     'django_token_bucket',
-    "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
@@ -106,15 +105,17 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django-simple-csp.middleware.csp.CSPMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 ]
+
+
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
@@ -235,16 +236,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bitpoll.wsgi.application'
 
-DEBUG = True
-
-
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'verceldb', 
         'USER': 'default',
@@ -410,7 +407,7 @@ ANTI_SPAM_CHALLENGE_TTL = 60 * 60 * 24 * 7  # Defaults to 7 days
 
 from .settings_local import *
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
+
+
