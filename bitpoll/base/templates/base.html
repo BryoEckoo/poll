@@ -21,6 +21,9 @@
     <title>{% block title %}{% endblock %} - {{ site_name }}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" media="print" href="{% static 'css/base_print.css' %}">
+    <link rel="stylesheet" media="print" href="{% static 'css/base_screen.css' %}">
+    <link rel="stylesheet" media="print" href="{% static 'css/base_print.css' %}">
+
     {% javascript 'base' %}
     {% block css %}{%  endblock %}
     {% block headJS %}{% endblock %}
