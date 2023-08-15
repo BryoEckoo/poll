@@ -21,6 +21,7 @@ libsasscompiler==0.1.9
 lxml==4.9.2
 Markdown==3.4.1
 markdownify==0.11.6
+psycopg2==2.9.7
 psycopg2-binary==2.9.5
 pycparser==2.21
 python-dateutil==2.8.2
