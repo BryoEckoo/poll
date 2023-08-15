@@ -36,13 +36,12 @@ MEDIA_URL = '/media/'
 # Example: "/var/www/example.com/static/"
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['*']
 
@@ -93,7 +92,6 @@ INSTALLED_APPS = [
     'friendlytagloader',
     'encrypted_model_fields',
     'django_token_bucket',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -107,8 +105,6 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django-simple-csp.middleware.csp.CSPMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  
 ]
 
 
@@ -410,7 +406,7 @@ URL_PREFIX = ''
 ANTI_SPAM_CHALLENGE_TTL = 60 * 60 * 24 * 7  # Defaults to 7 days
 
 from .settings_local import *
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
 
