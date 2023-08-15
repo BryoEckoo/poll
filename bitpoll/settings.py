@@ -36,8 +36,8 @@ MEDIA_URL = '/media/'
 # Example: "/var/www/example.com/static/"
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
