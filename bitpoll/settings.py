@@ -40,6 +40,7 @@ MEDIA_URL = '/media/'
 
 # ]
 
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # URL prefix for static files.
