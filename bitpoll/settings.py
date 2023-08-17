@@ -30,18 +30,14 @@ MEDIA_ROOT = os.path.join(ROOT_DIR, '_media')
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
 
-
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-# STATICFILES_DIRS = [
-# os.path.join(BASE_DIR, 'static'),
-
-# ]
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -111,11 +107,15 @@ MIDDLEWARE = [
     'pipeline.middleware.MinifyHTMLMiddleware',
 ]
 
+
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 ]
+
+
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
@@ -240,7 +240,6 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -251,6 +250,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
 
 CACHES = {
     'default': {
