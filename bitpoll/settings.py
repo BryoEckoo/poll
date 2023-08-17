@@ -291,7 +291,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'de-de'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Berlin'
 
