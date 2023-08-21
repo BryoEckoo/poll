@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.contrib import messages
 
@@ -24,26 +23,26 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(ROOT_DIR, '_media')
+#ROOT
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
 
-
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-# STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles','static')
-CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
+#was this one
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'https://poll-steel.vercel.app/'
+STATIC_URL = 'https://polling-system-aod20ic5i-nyatado98.vercel.app/static/'
 
 ALLOWED_HOSTS = ['*']
 
@@ -94,7 +93,7 @@ INSTALLED_APPS = [
     'friendlytagloader',
     'encrypted_model_fields',
     'django_token_bucket',
-    
+    'bitpoll',
 ]
 
 MIDDLEWARE = [
@@ -110,15 +109,16 @@ MIDDLEWARE = [
     'pipeline.middleware.MinifyHTMLMiddleware',
 ]
 
-
-
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 ]
 
-
+CORS_ALLOWED_ORIGINS = [
+    "https://web-production-9209d.up.railway.app",
+    # Other trusted origins
+]
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
@@ -244,14 +244,14 @@ WSGI_APPLICATION = 'bitpoll.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'verceldb', 
         'USER': 'default',
-        'PASSWORD': '1tPYwrClA8Sg',
-        'HOST': 'ep-jolly-heart-14214350-pooler.us-east-1.postgres.vercel-storage.com', 
+        'PASSWORD': 'nOwyK7dY8xEV',
+        'HOST': 'ep-dark-frost-29085156-pooler.us-east-1.postgres.vercel-storage.com', 
         'PORT': '5432',
-    }
+}
 }
 
 
@@ -294,7 +294,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de-de'
 
 TIME_ZONE = 'Europe/Berlin'
 
@@ -403,7 +403,6 @@ MARKDOWNIFY = {
     }
 }
 
-
 # The root dir bitpoll appears to be in from the web, as configured in the webserver
 URL_PREFIX = ''
 
@@ -413,5 +412,3 @@ from .settings_local import *
 
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
-
-
