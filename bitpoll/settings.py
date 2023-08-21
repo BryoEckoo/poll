@@ -43,7 +43,7 @@ CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = 'https://poll-steel.vercel.app/'
 
 ALLOWED_HOSTS = ['*']
 
