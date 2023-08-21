@@ -31,15 +31,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
 
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-#was this one
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles','static')
+CSS_PATH = os.environ.get('CSS_PATH', '/static/css')
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = 'https://polling-system-aod20ic5i-nyatado98.vercel.app/static/'
