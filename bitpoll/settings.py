@@ -111,6 +111,14 @@ STATICFILES_FINDERS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "poll-production-bbb0.up.railway.app",
+    # Other trusted origins
+]
+CSRF_TRUSTED_ORIGINS = [
+    "poll-production-bbb0.up.railway.app",
+    ]
+
+CORS_ALLOWED_ORIGINS = [
     "https://poll-production-bbb0.up.railway.app",
     # Other trusted origins
 ]
@@ -407,3 +415,5 @@ from .settings_local import *
 
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
