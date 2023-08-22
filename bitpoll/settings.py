@@ -111,17 +111,13 @@ STATICFILES_FINDERS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "poll-production-bbb0.up.railway.app",
-    # Other trusted origins
-]
-CSRF_TRUSTED_ORIGINS = [
-    "poll-production-bbb0.up.railway.app",
-    ]
-
-CORS_ALLOWED_ORIGINS = [
     "https://poll-production-bbb0.up.railway.app",
     # Other trusted origins
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://poll-production-bbb0.up.railway.app",
+    ]
+
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineManifestStorage'
 
