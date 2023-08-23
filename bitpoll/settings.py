@@ -413,3 +413,16 @@ INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Use the SMTP email backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# SMTP server settings
+EMAIL_HOST = 'smtp.gmail.com' 
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True 
+EMAIL_USE_SSL = False 
+
+# SMTP server authentication
+EMAIL_HOST_USER = 'chikoe26@gmail.com'  
+EMAIL_HOST_PASSWORD = 'chesiele90'
