@@ -63,7 +63,7 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = '/login/'
 
 SITE_NAME = 'Bitpoll'
-BASE_URL = 'https://bitpoll.mafiasi.de'
+BASE_URL = 'https://poll-production-bbb0.up.railway.app/'
 
 # Application definition
 
