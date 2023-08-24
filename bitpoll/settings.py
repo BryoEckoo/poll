@@ -418,11 +418,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # SMTP server settings
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io' 
+EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
 EMAIL_USE_SSL = False 
 
 # SMTP server authentication
-EMAIL_HOST_USER = 'd82c914daba0c0'  
+EMAIL_HOST_USER = 'chikoe26@gmail.com'  
 EMAIL_HOST_PASSWORD = 'c04a62a2a559c9'
