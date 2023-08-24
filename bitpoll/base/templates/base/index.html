@@ -195,8 +195,8 @@
     </section>
     {% if request.user.is_anonymous %}
     <section class="section login" style="background-color:#00d084;">
-        <div class="container">
-            <div class="halfsize">
+        <div class="container" style="background-color:#00d084;">
+            <div class="halfsize" style="background-color:#00d084;">
                 <form method="POST" action="{% url 'login' %}" class="form">
                     <h1>{% trans 'Log in' %}</h1>
                     {% csrf_token %}
