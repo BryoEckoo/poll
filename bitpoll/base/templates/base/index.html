@@ -220,7 +220,7 @@
         <div class="row padded-cells" style="background-color:#075e54;">
             {% value_from_settings REGISTER_ENABLED as register %}
             {% if request.user.is_anonymous and register %}
-            <div class="col-md-4">
+            <div class="col-md-4" style="background-color:#075e54;">
                 <h4>{% trans 'Register for more' %}</h4>
                 <p>{% blocktrans %}Registered users have access to the full width of features available.{% endblocktrans %}
                 </p>
@@ -228,7 +228,7 @@
             </div>
             {% endif %}
         {# TODO: own polls? #}
-            <div class="col-md-4">
+            <div class="col-md-4" style="background-color:#075e54;">
                 <h4>{% trans 'Statistics' %}</h4>
                 <table class="table">
                     <tr>
@@ -247,11 +247,11 @@
             </div>
             {% value_from_settings PUBLIC_POLLS as public_polls_setting %}
             {% if public_polls_setting %}
-                <div class="col-md-4">
+                <div class="col-md-4" style="background-color:#075e54;">
                     <h4>{% trans 'Public polls' %}</h4>
                     {% if not public_polls %}
                         <div class="alert alert-info">
-                            <div class="container"><i class="fa-solid fa-exclamation-circle"></i>{% trans 'There are currently no public polls.' %}
+                            <div class="container" style="background-color:#075e54;"><i class="fa-solid fa-exclamation-circle"></i>{% trans 'There are currently no public polls.' %}
                             </div>
                         </div>
                     {% else %}
@@ -266,7 +266,7 @@
                 </div>
             {% endif %}
             {% if request.user.is_authenticated %}
-            <div class="col-md-4">
+            <div class="col-md-4" style="background-color:#075e54;">
                 <h4>{% trans 'My Polls' %}</h4>
                 <small>{% trans 'You can find a list of all the polls in which you have participated on your profile page.' %}</small><br>
                 <br>
