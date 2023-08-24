@@ -216,8 +216,8 @@
         </div>
     </section>
     {% endif %}
-    <div class="container">
-        <div class="row padded-cells">
+    <div class="container" style="background-color:#075e54;">
+        <div class="row padded-cells" style="background-color:#075e54;">
             {% value_from_settings REGISTER_ENABLED as register %}
             {% if request.user.is_anonymous and register %}
             <div class="col-md-4">
