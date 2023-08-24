@@ -24,8 +24,8 @@
                         <div class="number">{% trans 'Step 1' %}</div>
                         <div class="title">{% trans 'Select Type' %}</div>
                     </div>
-                    <div class="form-group" style="background-color:#00d084;"><select class="form-control script-hidden" id="create-type-field"
-                                                    name="{{ poll_form.type.name }}">
+                    <div class="form-group" ><select class="form-control script-hidden" id="create-type-field"
+                                                    name="{{ poll_form.type.name }}" style="background-color:#00d084;">
                         {# TODO dynamisch, inklusive data-values unten #}
                         <option value="datetime" {% if poll_form.type.value == "datetime" %}selected="selected"{% endif %}>
                           {% trans 'Date and Time' %}
