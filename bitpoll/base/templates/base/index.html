@@ -44,7 +44,7 @@
                     </select>
                         <div class="script-only">
                             <ul id="create-type-list" class="type-choices">
-                                <li data-value="datetime">
+                                <li data-value="datetime" class="selected">
                                     <div class="icon"><i class="fa-solid fa-clock"></i>
                                     </div>
                                     <div class="text">
@@ -279,6 +279,25 @@
 {% endblock %}
 
 {% block additionalJS %}
-    {% javascript 'create_poll' %}
-    <script nonce="{% csp_js_nonce %}">$.datetimepicker.setLocale('{{ request.LANGUAGE_CODE }}');</script>
+    <script nonce="{% csp_js_nonce %}">
+        document.addEventListener("DOMContentLoaded", function() {
+            var typeChoices = document.querySelectorAll(".type-choices li");
+            typeChoices.forEach(function(choice) {
+                choice.addEventListener("click", function() {
+                    // Remove the "selected" class from all list items
+                    typeChoices.forEach(function(item) {
+                        item.classList.remove("selected");
+                    });
+                    // Add the "selected" class to the clicked list item
+                    choice.classList.add("selected");
+                });
+            });
+        });
+    </script>
 {% endblock %}
+
+<style>
+    .type-choices li.selected {
+        background-color: green;
+    }
+</style>
