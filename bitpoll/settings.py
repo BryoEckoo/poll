@@ -425,4 +425,4 @@ EMAIL_USE_SSL = False
 
 # SMTP server authentication
 EMAIL_HOST_USER = 'chikoe26@gmail.com'  
-EMAIL_HOST_PASSWORD = 'c04a62a2a559c9'
+EMAIL_HOST_PASSWORD = 'eckekhsgcohmmmac'
