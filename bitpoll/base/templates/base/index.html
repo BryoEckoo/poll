@@ -27,12 +27,6 @@
                     <div class="form-group" ><select class="form-control script-hidden" id="create-type-field"
                                                     name="{{ poll_form.type.name }}" style="background-color:#00d084;">
                         {# TODO dynamisch, inklusive data-values unten #}
-                        <option value="datetime" {% if poll_form.type.value == "datetime" %}selected="selected"{% endif %}>
-                          {% trans 'Date and Time' %}
-                        </option>
-                        <option value="date" {% if poll_form.type.value == "date" %}selected="selected"{% endif %}>
-                          {% trans 'Date' %}
-                        </option>
                         <option value="universal" {% if poll_form.type.value == "universal" %}selected="selected"{% endif %}>
                           {% trans 'Normal Poll' %}
                         </option>
@@ -283,12 +277,10 @@
         document.addEventListener("DOMContentLoaded", function() {
             var typeChoices = document.querySelectorAll(".type-choices li");
             typeChoices.forEach(function(choice) {
-                choice.addEventListener("click", function() {
-                    // Remove the "selected" class from all list items
+                choice.addEventListener("click", function() {                   
                     typeChoices.forEach(function(item) {
                         item.classList.remove("selected");
-                    });
-                    // Add the "selected" class to the clicked list item
+                    })
                     choice.classList.add("selected");
                 });
             });
@@ -299,6 +291,5 @@
 <style>
     .type-choices li.selected {
         background-color: green;
-        /* Add any other styles you want for the selected item */
     }
 </style>
