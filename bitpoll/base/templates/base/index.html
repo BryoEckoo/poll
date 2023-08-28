@@ -268,22 +268,5 @@
 
 {% block additionalJS %}
     <script nonce="{% csp_js_nonce %}">
-        document.addEventListener("DOMContentLoaded", function() {
-            var typeChoices = document.querySelectorAll(".type-choices li");
-            typeChoices.forEach(function(choice) {
-                choice.addEventListener("click", function() {                   
-                    typeChoices.forEach(function(item) {
-                        item.classList.remove("selected");
-                    })
-                    choice.classList.add("selected");
-                });
-            });
-        });
     </script>
 {% endblock %}
-
-<style>
-    .type-choices li.selected {
-        background-color: green;
-    }
-</style>
