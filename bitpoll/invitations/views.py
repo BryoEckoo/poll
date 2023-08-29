@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 from django.db import IntegrityError
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.response import TemplateResponse
@@ -61,7 +62,16 @@ def invitation_send(request, poll_url):
                 invitation = Invitation(user=user, poll=current_poll, date_created=now(), creator=request.user,
                                         vote=None)
                 invitation.save()
-                invitation.send(request)
+
+                # Send email to the user
+                send_mail(
+                    _('Invitation to Poll'),
+                    _('You have been invited to participate in a poll.'),
+                    'maono@northriftsolutions.com',   # Replace with your sender email address
+                    [user.email],           # Use the recipient's email address
+                    fail_silently=False,
+                )
+
             except IntegrityError:
                 messages.warning(request, _("The user {} was already invited".format(receiver)))
             except ObjectDoesNotExist:
@@ -72,7 +82,16 @@ def invitation_send(request, poll_url):
                             invitation = Invitation(user=group_user, poll=current_poll, date_created=now(),
                                                     creator=request.user, vote=None)
                             invitation.save()
-                            invitation.send(request)
+
+                            # Send email to the user
+                            send_mail(
+                                _('Invitation to Poll'),
+                                _('You have been invited to participate in a poll.'),
+                                'sender@example.com',   # Replace with your sender email address
+                                [group_user.email],     # Use the recipient's email address
+                                fail_silently=False,
+                            )
+
                         except IntegrityError:
                             # One user is already invited, ignore it
                             pass
