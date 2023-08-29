@@ -45,7 +45,6 @@ def invite(request, poll_url):
         'poll': current_poll,
     })
 
-
 @require_POST
 def invitation_send(request, poll_url):
     current_poll = get_object_or_404(Poll, url=poll_url)
