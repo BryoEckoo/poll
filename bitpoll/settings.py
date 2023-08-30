@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.contrib import messages
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -422,4 +423,6 @@ EMAIL_HOST = 'mail.northriftsolutions.com'
 EMAIL_HOST_USER = 'maono@northriftsolutions.com'
 EMAIL_HOST_PASSWORD = 'M@ono2030'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SENDGRID_API_KEY = '5d5e4c927039994a9be447954789d28e-451410ff-7499e475'
