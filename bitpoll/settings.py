@@ -413,16 +413,9 @@ from .settings_local import *
 INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Use the SMTP email backend
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.northriftsolutions.com'
 EMAIL_HOST_USER = 'maono@northriftsolutions.com'
 EMAIL_HOST_PASSWORD = 'M@ono2030'
 EMAIL_PORT = 587
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-SENDGRID_API_KEY = '5d5e4c927039994a9be447954789d28e-451410ff-7499e475'
+EMAIL_USE_TLS = True
