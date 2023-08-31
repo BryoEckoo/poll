@@ -350,6 +350,8 @@ GROUP_MANAGEMENT = REGISTER_ENABLED
 CSP_REPORT_ONLY = True
 CSP_REPORT_URL = ""
 
+DEFAULT_FROM_EMAIL = 'chikoe26@gmail.com'
+
 MAIL_SIGNATURE = "Bitpoll Team"
 
 TEAM_EMAIL = "mail@example.com"
