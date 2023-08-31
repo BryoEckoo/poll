@@ -350,8 +350,6 @@ GROUP_MANAGEMENT = REGISTER_ENABLED
 CSP_REPORT_ONLY = True
 CSP_REPORT_URL = ""
 
-DEFAULT_FROM_EMAIL = 'chikoe26@gmail.com'
-
 MAIL_SIGNATURE = "Bitpoll Team"
 
 TEAM_EMAIL = "mail@example.com"
@@ -416,8 +414,7 @@ INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.northriftsolutions.com'
-EMAIL_HOST_USER = 'maono@northriftsolutions.com'
-EMAIL_HOST_PASSWORD = 'M@ono2030'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = ' postmaster@sandboxf9165d35dc6445358c6549b1a9778e82.mailgun.org'
+EMAIL_HOST_PASSWORD = '500f8ffec3f6e20672301bb3517cb35c-451410ff-b15421bc'
+EMAIL_PORT = 587
