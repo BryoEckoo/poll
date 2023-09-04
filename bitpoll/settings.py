@@ -63,7 +63,7 @@ TEMPLATE_ALLOWABLE_SETTINGS_VALUES = [
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = '/login/'
 
-SITE_NAME = 'Bitpoll'
+SITE_NAME = 'Maoni'
 BASE_URL = 'https://poll-production-bbb0.up.railway.app/'
 
 # Application definition
