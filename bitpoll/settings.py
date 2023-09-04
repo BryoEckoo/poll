@@ -64,7 +64,7 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = '/login/'
 
 SITE_NAME = 'Maoni'
-BASE_URL = 'https://poll-production-bbb0.up.railway.app/'
+BASE_URL = 'https://poll-production-bbb0.up.railway.app'
 
 # Application definition
 
