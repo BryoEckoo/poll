@@ -190,7 +190,7 @@
             <a href="{% url 'poll_editchoicevalues' poll.url %}">{% trans 'Edit possible answer values' %}</a><br>
             <a href="{% url 'invitations' poll.url %}">{% trans 'Manage invitations' %}</a><br>
             <a href="{% url 'poll_copy' poll.url %}">{% trans 'Copy poll' %}</a><br>
-            <a href="https://api.whatsapp.com/send?text={% url 'poll_vote' poll.id %}" target="_blank">Share on WhatsApp</a><br>
+            <a href="https://api.whatsapp.com/send?text={{ base_url }}/poll/{{ poll.url }}/vote" target="_blank">Share on WhatsApp</a><br>
             <a class="red" href="{% url 'poll_delete' poll.url %}">{% trans 'Delete this poll' %}</a>
         </div></form>
         </div>
