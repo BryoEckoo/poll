@@ -413,9 +413,6 @@ INSTALLED_APPS += INSTALLED_APPS_LOCAL
 PIPELINE.update(PIPELINE_LOCAL)
 
 DEFAULT_FROM_EMAIL='maono@northriftsolutions.com'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'danndong080@gmail.com'
-# EMAIL_HOST_PASSWORD = 'okzumpamraiksdcq'
 EMAIL_HOST = 'mail.northriftsolutions.com'
 EMAIL_HOST_USER = 'maono@northriftsolutions.com'
 EMAIL_HOST_PASSWORD = 'M@ono2030'
