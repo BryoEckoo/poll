@@ -24,7 +24,8 @@ urlpatterns = [
 
     re_path(r'^([a-zA-Z0-9_\-]+)/delete/$', views.delete, name='poll_delete'),
 
-    re_path(r'^([a-zA-Z0-9_\-]+)/vote/$', views.vote, name='poll_vote'),
+    # In urls.py
+    path('polls/vote/<int:poll_id>/', views.poll_vote, name='poll_vote')
     re_path(r'^([a-zA-Z0-9_\-]+)/vote/(\d+)/assign/$', views.vote_assign, name='poll_voteAssign'),
     re_path(r'^([a-zA-Z0-9_\-]+)/vote/(\d+)/edit/$', views.vote, name='poll_voteEdit'),
     re_path(r'^([a-zA-Z0-9_\-]+)/vote/(\d+)/delete/$', views.vote_delete, name='poll_voteDelete'),
